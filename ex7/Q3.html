@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<style>
+    #d1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 50%;
+        height: 200px;
+    }
+    #d2 {
+        background-color: whitesmoke;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #c {
+        align-self: center;
+    }
+</style>
+<script>
+$(document).ready(function(){
+    $("p").hide();
+    $("#c").hide();
+    $("#o").click(function(){
+        $("p").show();
+
+        $("#c").show();
+    });
+    
+    $("#c").click(function(){
+        $("p").hide();
+        $("#c").hide();
+    });
+
+    $("#color-dropdown").change(function(){
+        var selectedColor = $(this).val();
+        $("#d1").css("background-color", selectedColor);
+    });
+
+
+});
+</script>
+</head>
+<body>
+<div id="d1">
+    <button id="o">Open</button>
+    
+    <select id="color-dropdown">
+
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+    </select>
+    <br>
+    
+    <div id="d1">Hi</div>
+    <div id="d2">
+        <p>If you click on the "Close" button, I will disappear.</p>
+        <button id="c">Close</button>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+
+    color: aliceblue;
+}
+body{
+    background-color: black;
+}
+
+#heading {
+    text-align: center;
+}
+
+.contbg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.formcont{
+    background-color: rgb(76, 76, 76);
+    width: 400px;
+    padding: 35px;
+    opacity: 0.5;
+    
+}
+input[type='text']{
+    background-color: aliceblue;
+    color: rgb(0, 0, 0);
+}
+.formcont{
+    color: darkblue;
+}
+
+#btn{
+    background-color: brown;
+    color:white;
+}

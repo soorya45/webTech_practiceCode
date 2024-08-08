@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script> 
+$(document).ready(function(){
+  $("button").click(function(){
+    $("img").animate({bottom: '150px',height:'+500px',width:'+500px'});
+  });
+  function b(){
+  $('h1').fadeOut(1000,function(){
+    $(this).fadeIn(1000,b)
+  });
+}
+b();
+});
+
+</script> 
+</head>
+<body>
+  <h1>BBBBBBBB</h1>
+
+<button>Start</button>
+<br><br>
+<img src="im1.webp" alt="null" style="height: 100px; width: 100px; position: absolute;">
+
+</body>
+</html>

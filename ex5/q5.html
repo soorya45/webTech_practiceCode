@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pizza Order Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #4CAF50;
+    }
+    .container {
+        max-width: 480px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #ccc;
+    }
+
+
+    input[type="number"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+    button {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        border-radius: 6px;
+        color: white;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+    }
+    img{
+        padding: 30px;
+    }
+
+</style>
+</head>
+<body>
+    <br><br><br><br>
+<div class="container">
+    <div>
+        <div id="d1">
+            <img src="v.jpg" width="85px" height="85px" alt="null">
+            <img src="nppppppp.jpg" width="85px" height="85px" alt="null">
+            <img src="bbbbbb.jpg" width="85px" height="85px" alt="null"><br>                                                                                                                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="checkbox" id="veg" value="100"> Veg-100                                                                                                                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="checkbox" id="nonveg" value="300"> Non-Veg-300                                                                                                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="checkbox" id="burger" value="150"> Burger-150
+        </div><br>
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter email...">
+    </div><br>
+    <div>
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" placeholder="Enter phone...">
+    </div><br>
+    <div>
+        <label for="slices">Number of Slices:</label>
+        <input type="number" id="slices" placeholder="Enter slices...">
+    </div><br>
+    <div>
+        <label>Pizza Size:</label>
+        <input type="radio" id="size8" name="size" value="8"> 8-inch
+        <input type="radio" id="size10" name="size" value="10"> 10-inch
+        <input type="radio" id="size12" name="size" value="12"> 12-inch
+        <input type="radio" id="size14" name="size" value="14"> 14-inch
+    </div><br>
+    <div>
+        <label>Toppings:</label>
+        <input type="checkbox" id="topping1" value="10"> Pepperoni
+        <input type="checkbox" id="topping2" value="10"> Mushrooms
+        <input type="checkbox" id="topping3" value="10"> Onions
+        <input type="checkbox" id="topping4" value="10"> Sausage
+    </div><br>
+    <div>
+        <input type="checkbox" id="terms"> I agree to the Terms and Conditions
+    </div><br>
+    <div>
+        <button onclick="calculateTotal()">Calculate Total</button>
+        <button onclick="a()"> Total</button>
+    </div>
+    <div id="total"></div>
+</div>
+<script>
+    function calculateTotal() {
+        var email = document.getElementById('email').value;
+        var phone = document.getElementById('phone').value;
+        var slices = document.getElementById('slices').value;
+        var size = document.querySelector('input[name="size"]:checked');
+        var toppings = 0;
+        
+        if (document.getElementById('topping1').checked) toppings += 10;
+        if (document.getElementById('topping2').checked) toppings += 10;
+        if (document.getElementById('topping3').checked) toppings += 10;
+        if (document.getElementById('topping4').checked) toppings += 10;
+        var terms = document.getElementById('terms').checked;
+        var itemTypeCost = 0;
+        if (document.getElementById('veg').checked) itemTypeCost += 100;
+        if (document.getElementById('nonveg').checked) itemTypeCost += 300;
+        if (document.getElementById('burger').checked) itemTypeCost += 150;
+
+        if (!email || !phone || !slices || !size || !terms) {
+            alert("Please fill out all required fields and agree to the terms.");
+            return;
+        }
+        var sliceCost = 35; 
+        var subtotal = parseFloat(size.value) + parseFloat(toppings) + itemTypeCost + (sliceCost * slices);
+        var tax = subtotal * 0.09;
+        var total = subtotal + tax;
+        document.getElementById('total').innerHTML = "Total Cost: $" + total.toFixed(2);
+    }
+</script>
+</body>
+</html>

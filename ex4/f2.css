@@ -1,0 +1,52 @@
+body{
+    background-image: url("imbg.webp");
+    background-size: cover;
+    opacity: 1;
+    padding: 10%;
+  }
+  
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table {
+    background-color: rgb(243, 192, 8);
+    border-radius: 5%;
+    border-color: black;
+    width: 45%;
+    box-shadow: 10px 10px 5px rgb(232, 182, 44);
+    border-style: solid;
+    margin-top: 10%;
+}
+
+img {
+    opacity: 0.9;
+    transition: transform 0.3s ease;
+}
+
+
+tr,
+th {
+    text-align: center;
+}
+
+
+tr:nth-child(even) {
+    background-color: rgb(155, 225, 248); 
+}
+
+tr:nth-child(odd) {
+    background-color: rgb(103, 205, 103); 
+}
+tr:nth-child(odd) {
+    background-color: rgb(103, 205, 103); 
+}
+
+tr:hover{
+    background-color: rgb(255, 186, 97);
+    border-radius: 20%;
+    opacity: 1;
+
+}
+

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application</title>
+</head>
+<body>
+    <table width="97%" cellspacing="5">
+        <tr>
+            <td><h2 style="text-align:left;font-family: Arial;">Company Name</h2></td>
+            <td><img src="klogo.png" height="100" width="100" alt="image" align="right"></td>
+        </tr>
+        <tr><td colspan="2"><hr color="skyblue"></td></tr>
+    </table>
+    <table style="width: 100%; border: 0;">
+        <tr>
+            
+            <td style="text-align: right;">
+                <a href="index.html"><b>Media Elements</b></a>
+            </td>
+            <td style="text-align: left;">
+                <a href="application.html"><b>Application Form</b></a>
+            </td>
+        </tr>
+        <td colspan="2"><hr color="skyblue"></td></tr>
+    </table>
+
+    <br>
+    <fieldset style="margin: auto; ">
+        <legend style="text-align: center; color:blue">Application Form</legend>
+        <form name="user_form" action="submit.php" method="get" autocomplete="on" style="text-align: center;">
+            <label style="text-align: center; color:blue"for="name">Name:</label>
+            <input type="text" id="name" name="name" required autofocus placeholder="Enter the name" style="text-align: center;"><br><br>
+
+            <label style="text-align: center; color:blue"for="app_no">Application Number:</label>
+            <input type="text" id="app_no" name="app_no" required pattern="KU2020CSE1[0-9]{3}" placeholder="KU2020CSE1XXX" style="text-align: center;"><br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required minlength="8" maxlength="10" placeholder="Enter Password Minimum 8 Characters" style="text-align: center;"><br><br>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required min="18" max="35" placeholder="Enter Your Age" style="text-align: center;"><br><br>
+            <label for="gender" style="text-align: left;">Gender:</label>
+
+            <label for="gender_male">Male</label>
+            <input type="radio" id="gender_male" name="gender" value="male">
+            <label for="gender_female">Female</label>
+            <input type="radio" id="gender_female" name="gender" value="female"><br><br>
+
+            <label for="dob">DOB:</label>
+            <input type="date" id="dob" name="dob" required style="text-align: center;"><br><br>
+
+            <label for="mobile">Mobile:</label>
+            <input type="tel" id="mobile" name="mobile" required pattern="([+][0-9]{3}[0-9]{5}[0-9]{5})|([0-9]{10})" placeholder="(+91)99999-99999" style="text-align: center;"><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="Enter Email" style="text-align: center;"><br><br>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="4" cols="50"></textarea><br><br>
+
+            <label for="zipcode">Zipcode:</label>
+            <input type="text" id="zipcode" name="zipcode" pattern="[0-9]{6}" required placeholder="Enter Pincode" style="text-align: center;"><br><br>
+
+            <label style="text-align: center; color:blue"for="lang">Languages Known:</label>
+            
+            <label style="text-align: center; color:blue"for="lang_english">English</label>
+            <input type="checkbox" id="lang_english" name="lang" value="English">
+            <label style="text-align: center; color:blue"for="lang_tamil">Tamil</label>
+            <input type="checkbox" id="lang_tamil" name="lang" value="Tamil">
+            <label style="text-align: center; color:blue"for="lang_malayalam">Malayalam</label>
+            <input type="checkbox" id="lang_malayalam" name="lang" value="Malayalam">
+            <label style="text-align: center; color:blue"for="lang_telugu">Telugu</label>
+            <input type="checkbox" id="lang_telugu" name="lang" value="Telugu">
+            <label style="text-align: center; color:blue"for="lang_hindi">Hindi</label>
+            <input type="checkbox" id="lang_hindi" name="lang" value="Hindi"><br><br>
+
+            <label style="text-align: center; color:blue"for="course">Select your Course:</label>
+            <select id="course" name="course" required style="text-align: center;">
+                <option value="">Select</option>
+                <option value="btech_cse">B.Tech Computer Science and Engineering</option>
+            </select><br><br>
+
+            <label style="text-align: center; color:blue"for="photo">Upload your Photo:</label>
+            <input style="text-align: center; color:blue"type="file" id="photo" name="photo" required accept=".jpg, .png" style="margin-bottom: 10px; text-align: center;"><br><br>
+            <progress id="photoProgress" value="50" max="100"></progress>50% Uploading Completed<br><br>
+
+            <input type="submit">
+        </form>
+    </fieldset>
+</body>
+</html>
